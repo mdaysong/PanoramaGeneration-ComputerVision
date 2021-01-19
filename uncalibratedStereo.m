@@ -76,6 +76,8 @@ points2 = lineToBorderPoints(epiLines2,size(I2));
 line(points2(:,[1,3])',points2(:,[2,4])');
 [isIn2,epipole2] = isEpipoleInImage(fRANSAC,size(I2));
 
+%Todo: Confirm proper matching inlier points (such points need to lie on the epipolar lines)
+
 %estimating uncalibrated rectification
 [T1,T2] = estimateUncalibratedRectification(fRANSAC,mShort1,mShort2,size(I2));
 %rectify the stereo images
